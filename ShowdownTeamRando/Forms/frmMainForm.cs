@@ -97,11 +97,13 @@ namespace ShowdownTeamRando
         private async void btnRandomize_Click(object sender, EventArgs e)
         {
             this.UseWaitCursor = true;
+            btnRandomize.Enabled = false;
 
             CurrentRando = await RandomizationHelper.RandomizeCategory(CurrentCategory);
             RefreshRando();
 
             this.UseWaitCursor = false;
+            btnRandomize.Enabled = true;
         }
 
         private void btnNextTeam_Click(object sender, EventArgs e)

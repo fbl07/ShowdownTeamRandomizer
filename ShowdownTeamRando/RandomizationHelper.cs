@@ -1,30 +1,62 @@
-﻿using ShowdownTeamRando.Models;
+﻿using RestSharp;
+using ShowdownTeamRando.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace ShowdownTeamRando
 {
     public static class RandomizationHelper
     {
+        private const string API_CALL_FILENAME = "API_CALL.json";
+        private const string API_URL = "https://api.random.org/json-rpc/4/invoke";
+
+        private static int id = 1;
+
         public static async Task<RandomizationResult> RandomizeCategory(Category category)
         {
-            await Task.Delay(1000);
-
+            var restsharp = new RestClient();
             var upcomingTeams = new Queue<Team>();
 
-            for (int i = 0; i < 10; i++)
-                upcomingTeams.Enqueue(category.Teams[i]);
+            string apiCall = File.ReadAllText(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), API_CALL_FILENAME));
 
-            return new RandomizationResult()
+            int n = Math.Min(10, category.Teams.Count);
+            int max = category.Teams.Count - 1;
+
+            apiCall = apiCall.Replace("%n%", n.ToString());
+            apiCall = apiCall.Replace("%max%", max.ToString());
+            apiCall = apiCall.Replace("%id%", id.ToString());
+
+            var restRequest = new RestRequest(API_URL);
+            restRequest.AddJsonBody(apiCall);
+
+            var response = await restsharp.PostAsync(restRequest);
+
+            if (response.IsSuccessful)
             {
-                Category = category,
-                UpcomingTeams = upcomingTeams,
-                CurrentTeam = upcomingTeams.Dequeue()
-            };
+                var responseJson = JsonObject.Parse(response.Content);
+
+                var array = responseJson["result"]["random"]["data"].AsArray();
+
+                foreach (var item in array)
+                {
+                    var team = category.Teams[item.GetValue<int>()];
+                    upcomingTeams.Enqueue(team);
+                }
+
+                return new RandomizationResult()
+                {
+                    Category = category,
+                    UpcomingTeams = upcomingTeams,
+                    CurrentTeam = upcomingTeams.Dequeue()
+                };
+            }
+            else
+                return null;
         }
     }
 }
