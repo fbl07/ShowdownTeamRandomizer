@@ -27,15 +27,17 @@ namespace ShowdownTeamRando
             LoadTeams();
         }
 
-        private void rbCategories_CheckedChanged(object sender, EventArgs e)
+        private void rbFolders_CheckedChanged(object sender, EventArgs e)
         {
             Configs.UseGameModes = !rbFolders.Checked;
+            lblFolder.Text = "Folder";
             LoadTeams();
         }
 
         private void rbGameFormats_CheckedChanged(object sender, EventArgs e)
         {
             Configs.UseGameModes = rbGameFormats.Checked;
+            lblFolder.Text = "Game Mode";
             LoadTeams();
         }
 

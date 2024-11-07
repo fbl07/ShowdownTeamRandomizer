@@ -64,7 +64,7 @@
             rbFolders.TabStop = true;
             rbFolders.Text = "Teams By Folders";
             rbFolders.UseVisualStyleBackColor = true;
-            rbFolders.CheckedChanged += rbCategories_CheckedChanged;
+            rbFolders.CheckedChanged += rbFolders_CheckedChanged;
             // 
             // rbGameFormats
             // 

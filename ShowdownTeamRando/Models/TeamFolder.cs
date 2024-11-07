@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ShowdownTeamRando.Models
 {
-    public class TeamFolder
+    public class TeamFolder : Category
     {
-        public string? Name { get; set; }
+        public override string? Name { get; set; }
 
-        public List<Team> Teams { get; set; } = new List<Team>();
+        public override List<Team> Teams { get; set; } = new List<Team>();
     }
 }

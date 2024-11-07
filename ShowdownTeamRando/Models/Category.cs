@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ShowdownTeamRando.Models
 {
-    public class GameMode : Category
+    public class Category
     {
-        public override string? Name { get; set; }
+        public virtual string Name { get; set; }
+        public virtual List<Team> Teams { get; set; }
 
-        public override List<Team> Teams { get; set; } = new List<Team>();
     }
 }
