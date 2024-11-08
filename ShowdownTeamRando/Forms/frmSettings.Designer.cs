@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSettings));
             label1 = new Label();
             txtDesktopLocation = new TextBox();
             btnBrowse = new Button();
@@ -274,6 +275,7 @@
             Controls.Add(txtDesktopLocation);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmSettings";
             Text = "Settings";
             Load += frmSettings_Load;

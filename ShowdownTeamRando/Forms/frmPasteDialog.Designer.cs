@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPasteDialog));
             label1 = new Label();
             txtPaste = new TextBox();
             btnCancel = new Button();
@@ -85,6 +86,7 @@
             Controls.Add(btnCancel);
             Controls.Add(txtPaste);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmPasteDialog";
             Text = "Input Paste from Pokemon Showdown";
             ResumeLayout(false);

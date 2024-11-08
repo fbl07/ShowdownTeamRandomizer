@@ -1,4 +1,5 @@
 using ShowdownTeamRando.Models;
+using System.Reflection;
 using System.Runtime.Versioning;
 
 namespace ShowdownTeamRando
@@ -17,6 +18,8 @@ namespace ShowdownTeamRando
 
         private void frmMainForm_Load(object sender, EventArgs e)
         {
+            lblVersion.Text = $"Version {Assembly.GetEntryAssembly()?.GetName().Version?.ToString(3)}";
+
             var loadedConfigs = SettingsHelper.LoadSettings();
             if (loadedConfigs == null)
                 loadedConfigs = new Configs();

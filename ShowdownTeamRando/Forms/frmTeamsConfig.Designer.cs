@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTeamsConfig));
             rbFolders = new RadioButton();
             rbGameFormats = new RadioButton();
             cboCategories = new ComboBox();
@@ -293,6 +294,7 @@
             Controls.Add(cboCategories);
             Controls.Add(rbGameFormats);
             Controls.Add(rbFolders);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmTeamsConfig";
             Text = "Team Configuration";
             Load += frmTeamsConfig_Load;
