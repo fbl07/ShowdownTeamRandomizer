@@ -19,6 +19,7 @@
     <Content Include="API_CALL.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="bin\Debug\net8.0-windows\config.json" />
     <Content Include="icon.ico" />
   </ItemGroup>
 

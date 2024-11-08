@@ -44,7 +44,11 @@ namespace ShowdownTeamRando
             var result = configDialog.ShowDialog();
 
             if (result == DialogResult.OK)
+            {
                 SettingsHelper.SaveSettings(Configs);
+                LoadTeams();
+                cboCategories_SelectedIndexChanged(sender, e);
+            }
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -72,6 +76,11 @@ namespace ShowdownTeamRando
 
         private void cboCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btnRandomize.Enabled = cboCategories.SelectedIndex > -1;
+
+            if (cboCategories.SelectedIndex == -1)
+                return;
+
             string info = "";
 
             if (!Configs.UseGameModes)
@@ -94,6 +103,7 @@ namespace ShowdownTeamRando
                 info = $"This game mode has {CurrentCategory.Teams.Count} teams from {folderCount} folder{(folderCount > 1 ? "s" : "")}.";
             }
 
+            
             lblCatInfo.Text = info;
         }
 
@@ -125,6 +135,8 @@ namespace ShowdownTeamRando
         protected void LoadTeams()
         {
             cboCategories.Items.Clear();
+            cboCategories.SelectedIndex = -1;
+            CurrentCategory = null;
 
             if (!Configs.UseGameModes)
             {
