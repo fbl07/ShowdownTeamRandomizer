@@ -10,7 +10,7 @@
     <ROW Property="Manufacturer" Value="Noémie Lord"/>
     <ROW Property="ProductCode" Value="1033:{1CDE8062-B22A-4BE9-A828-FAA505447403} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
-    <ROW Property="ProductName" Value="Pokemon Showdown Team Randomizer [|ProductVersion]"/>
+    <ROW Property="ProductName" Value="Pokemon Showdown Team Randomizer"/>
     <ROW Property="ProductVersion" Value="1.1.0" Options="32"/>
     <ROW Property="REBOOT" MultiBuildValue="AnyCPU_Release:Suppress"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
