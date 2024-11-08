@@ -34,4 +34,8 @@
     <PackageReference Include="RestSharp" Version="112.1.0" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if $(ConfigurationName) == Release call zip_build.bat $(ProjectDir) " />
+  </Target>
+
 </Project>
