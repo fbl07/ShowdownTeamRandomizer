@@ -165,8 +165,8 @@
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="ShowdownTeamRando.exe" Directory_="SHORTCUTDIR" Name="SHOWDO~1.EXE|ShowdownTeamRando.exe" Component_="ShowdownTeamRando.exe" Target="[#ShowdownTeamRando.exe]" Description="ShowdownTeamRando.exe" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
-    <ROW Shortcut="ShowdownTeamRando.exe_1" Directory_="DesktopFolder" Name="SHOWDO~1.EXE|ShowdownTeamRando.exe" Component_="ShowdownTeamRando.exe" Target="[#ShowdownTeamRando.exe]" Description="ShowdownTeamRando.exe" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="ShowdownTeamRando.exe" Directory_="SHORTCUTDIR" Name="POKEMO~1|Pokemon Showdown Team Randomizer" Component_="ShowdownTeamRando.exe" Target="[#ShowdownTeamRando.exe]" Description="Pokemon Showdown Team Randomizer" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="ShowdownTeamRando.exe_1" Directory_="DesktopFolder" Name="POKEMO~1|Pokemon Showdown Team Randomizer" Component_="ShowdownTeamRando.exe" Target="[#ShowdownTeamRando.exe]" Description="Pokemon Showdown Team Randomizer" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
