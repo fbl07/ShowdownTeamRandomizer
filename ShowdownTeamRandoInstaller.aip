@@ -4,14 +4,14 @@
     <ROW Property="AI_APP_FILE" Value="[#ShowdownTeamRando.exe]"/>
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="ALLUSERS" Value="1" MultiBuildValue="AnyCPU_Release:"/>
-    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName] [|ProductVersion]." ValueLocId="*"/>
     <ROW Property="ARPPRODUCTICON" Value="icon.exe" Type="8"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="Noémie Lord"/>
-    <ROW Property="ProductCode" Value="1033:{1CDE8062-B22A-4BE9-A828-FAA505447403} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{76871C3D-67AF-412E-8F82-AF118DB45CB2} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Pokemon Showdown Team Randomizer"/>
-    <ROW Property="ProductVersion" Value="1.1.0" Options="32"/>
+    <ROW Property="ProductVersion" Value="1.2.0" Options="32"/>
     <ROW Property="REBOOT" MultiBuildValue="AnyCPU_Release:Suppress"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
@@ -57,6 +57,7 @@
     <ROW File="ShowdownTeamRando.deps.json" Component_="ShowdownTeamRando.runtimeconfig.json" FileName="SHOWDO~2.JSO|ShowdownTeamRando.deps.json" Attributes="0" SourcePath="ShowdownTeamRando\bin\Release\net8.0-windows\ShowdownTeamRando.deps.json" SelfReg="false"/>
     <ROW File="API_CALL.json" Component_="ShowdownTeamRando.runtimeconfig.json" FileName="API_CA~1.JSO|API_CALL.json" Attributes="0" SourcePath="ShowdownTeamRando\bin\Release\net8.0-windows\API_CALL.json" SelfReg="false"/>
     <ROW File="ShowdownTeamRando.exe" Component_="ShowdownTeamRando.exe" FileName="SHOWDO~1.EXE|ShowdownTeamRando.exe" Attributes="0" SourcePath="ShowdownTeamRando\bin\Release\net8.0-windows\ShowdownTeamRando.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="ShowdownTeamRando.pdb" Component_="ShowdownTeamRando.exe" FileName="SHOWDO~1.PDB|ShowdownTeamRando.pdb" Attributes="0" SourcePath="ShowdownTeamRando\bin\Debug\net8.0-windows\ShowdownTeamRando.pdb" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
     <ROW BuildKey="AnyCPU_Release" BuildName="AnyCPU_Release" BuildOrder="1" BuildType="0" Languages="en" InstallationType="4" SummInfoMetadata="Page Count:450" UseLargeSchema="true" MsiPackageType="x64"/>

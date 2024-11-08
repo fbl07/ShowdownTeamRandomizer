@@ -265,6 +265,7 @@
             // 
             // btnRandomize
             // 
+            btnRandomize.Enabled = false;
             btnRandomize.Location = new Point(12, 122);
             btnRandomize.Name = "btnRandomize";
             btnRandomize.Size = new Size(425, 23);
@@ -285,7 +286,7 @@
             // lblVersion
             // 
             lblVersion.Name = "lblVersion";
-            lblVersion.Size = new Size(810, 17);
+            lblVersion.Size = new Size(841, 17);
             lblVersion.Spring = true;
             lblVersion.Text = "Version";
             lblVersion.TextAlign = ContentAlignment.MiddleRight;

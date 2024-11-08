@@ -107,6 +107,7 @@
             // 
             // btnRemoveIgnoredGameMode
             // 
+            btnRemoveIgnoredGameMode.Enabled = false;
             btnRemoveIgnoredGameMode.Location = new Point(6, 141);
             btnRemoveIgnoredGameMode.Name = "btnRemoveIgnoredGameMode";
             btnRemoveIgnoredGameMode.Size = new Size(75, 23);
@@ -123,6 +124,7 @@
             lbIgnoredGameModes.Name = "lbIgnoredGameModes";
             lbIgnoredGameModes.Size = new Size(405, 79);
             lbIgnoredGameModes.TabIndex = 2;
+            lbIgnoredGameModes.SelectedIndexChanged += lbIgnoredGameModes_SelectedIndexChanged;
             // 
             // btnAddIgnoredGameMode
             // 
@@ -140,6 +142,7 @@
             txtNewIgnoredGameMode.Name = "txtNewIgnoredGameMode";
             txtNewIgnoredGameMode.Size = new Size(349, 23);
             txtNewIgnoredGameMode.TabIndex = 0;
+            txtNewIgnoredGameMode.KeyDown += txtNewIgnoredGameMode_KeyDown;
             // 
             // groupBox2
             // 
@@ -156,6 +159,7 @@
             // 
             // btnRemoveIgnoredFolder
             // 
+            btnRemoveIgnoredFolder.Enabled = false;
             btnRemoveIgnoredFolder.Location = new Point(6, 141);
             btnRemoveIgnoredFolder.Name = "btnRemoveIgnoredFolder";
             btnRemoveIgnoredFolder.Size = new Size(75, 23);
@@ -172,6 +176,7 @@
             lbIgnoredFolders.Name = "lbIgnoredFolders";
             lbIgnoredFolders.Size = new Size(405, 79);
             lbIgnoredFolders.TabIndex = 2;
+            lbIgnoredFolders.SelectedIndexChanged += lbIgnoredFolders_SelectedIndexChanged;
             // 
             // btnAddIgnoredFolder
             // 
@@ -189,6 +194,7 @@
             txtNewIgnoredFolder.Name = "txtNewIgnoredFolder";
             txtNewIgnoredFolder.Size = new Size(349, 23);
             txtNewIgnoredFolder.TabIndex = 0;
+            txtNewIgnoredFolder.KeyDown += txtNewIgnoredFolder_KeyDown;
             // 
             // groupBox3
             // 
@@ -205,6 +211,7 @@
             // 
             // btnRemoveIgnoredTeam
             // 
+            btnRemoveIgnoredTeam.Enabled = false;
             btnRemoveIgnoredTeam.Location = new Point(6, 141);
             btnRemoveIgnoredTeam.Name = "btnRemoveIgnoredTeam";
             btnRemoveIgnoredTeam.Size = new Size(75, 23);
@@ -221,6 +228,7 @@
             lbIgnoredTeams.Name = "lbIgnoredTeams";
             lbIgnoredTeams.Size = new Size(405, 79);
             lbIgnoredTeams.TabIndex = 2;
+            lbIgnoredTeams.SelectedIndexChanged += lbIgnoredTeams_SelectedIndexChanged;
             // 
             // btnAddIgnoredTeam
             // 
@@ -238,6 +246,7 @@
             txtNewIgnoredTeam.Name = "txtNewIgnoredTeam";
             txtNewIgnoredTeam.Size = new Size(349, 23);
             txtNewIgnoredTeam.TabIndex = 0;
+            txtNewIgnoredTeam.KeyDown += txtNewIgnoredTeam_KeyDown;
             // 
             // btnCancel
             // 

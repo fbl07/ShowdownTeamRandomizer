@@ -44,6 +44,13 @@ namespace ShowdownTeamRando
         private void cboCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbTeams.Items.Clear();
+            lbTeams.SelectedIndex = -1;
+            btnAdd.Enabled = (cboCategories.SelectedIndex != -1 && txtNewTeamName.Text.Length > 0);
+
+            lbTeams_SelectedIndexChanged(sender, e);
+
+            if (cboCategories.SelectedIndex == -1)
+                return;
 
             if (!Configs.UseGameModes)
             {
@@ -71,11 +78,23 @@ namespace ShowdownTeamRando
 
         private void lbTeams_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var team = FindTeam();
+            btnUpdate.Enabled = lbTeams.SelectedIndex != -1;
+            btnDelete.Enabled = lbTeams.SelectedIndex != -1;
 
-            txtTeamName.Text = team.Name;
-            txtGameMode.Text = team.GameMode;
-            txtFolder.Text = team.Folder;
+            if (lbTeams.SelectedIndex == -1)
+            {
+                txtTeamName.Text = "";
+                txtGameMode.Text = "";
+                txtFolder.Text = "";
+            }
+            else
+            {
+                var team = FindTeam();
+
+                txtTeamName.Text = team.Name;
+                txtGameMode.Text = team.GameMode;
+                txtFolder.Text = team.Folder;
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -146,9 +165,24 @@ namespace ShowdownTeamRando
             }
         }
 
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+            Configs.TeamFolders.Clear();
+            Configs.GameModes.Clear();
+            cboCategories.SelectedIndex = -1;
+            lbTeams.SelectedIndex = -1;
+            LoadTeams();
+        }
+
+        private void txtNewTeamName_TextChanged(object sender, EventArgs e)
+        {
+            btnAdd.Enabled = (cboCategories.SelectedIndex != -1 && txtNewTeamName.Text.Length > 0);
+        }
+
         protected void LoadTeams()
         {
             cboCategories.Items.Clear();
+            lbTeams.Items.Clear();
 
             if (!Configs.UseGameModes)
             {

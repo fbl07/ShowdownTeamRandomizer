@@ -51,6 +51,7 @@
             btnAdd = new Button();
             btnImportPaste = new Button();
             btnSave = new Button();
+            btnDeleteAll = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -84,7 +85,7 @@
             cboCategories.FormattingEnabled = true;
             cboCategories.Location = new Point(12, 64);
             cboCategories.Name = "cboCategories";
-            cboCategories.Size = new Size(330, 23);
+            cboCategories.Size = new Size(507, 23);
             cboCategories.TabIndex = 3;
             cboCategories.SelectedIndexChanged += cboCategories_SelectedIndexChanged;
             // 
@@ -103,7 +104,7 @@
             lbTeams.ItemHeight = 15;
             lbTeams.Location = new Point(12, 153);
             lbTeams.Name = "lbTeams";
-            lbTeams.Size = new Size(330, 319);
+            lbTeams.Size = new Size(507, 319);
             lbTeams.TabIndex = 5;
             lbTeams.SelectedIndexChanged += lbTeams_SelectedIndexChanged;
             // 
@@ -120,7 +121,7 @@
             // 
             btnClose.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnClose.DialogResult = DialogResult.Cancel;
-            btnClose.Location = new Point(671, 496);
+            btnClose.Location = new Point(816, 496);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(75, 23);
             btnClose.TabIndex = 7;
@@ -130,7 +131,7 @@
             // btnImportFolder
             // 
             btnImportFolder.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnImportFolder.Location = new Point(524, 12);
+            btnImportFolder.Location = new Point(669, 12);
             btnImportFolder.Name = "btnImportFolder";
             btnImportFolder.Size = new Size(222, 23);
             btnImportFolder.TabIndex = 8;
@@ -149,15 +150,16 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txtTeamName);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(348, 64);
+            groupBox1.Location = new Point(525, 64);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(398, 408);
+            groupBox1.Size = new Size(366, 408);
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Team Info";
             // 
             // btnDelete
             // 
+            btnDelete.Enabled = false;
             btnDelete.Location = new Point(87, 193);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(75, 23);
@@ -168,6 +170,7 @@
             // 
             // btnUpdate
             // 
+            btnUpdate.Enabled = false;
             btnUpdate.Location = new Point(6, 193);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(75, 23);
@@ -182,7 +185,7 @@
             txtFolder.Location = new Point(6, 148);
             txtFolder.Name = "txtFolder";
             txtFolder.ReadOnly = true;
-            txtFolder.Size = new Size(386, 23);
+            txtFolder.Size = new Size(354, 23);
             txtFolder.TabIndex = 5;
             // 
             // label4
@@ -200,7 +203,7 @@
             txtGameMode.Location = new Point(6, 94);
             txtGameMode.Name = "txtGameMode";
             txtGameMode.ReadOnly = true;
-            txtGameMode.Size = new Size(386, 23);
+            txtGameMode.Size = new Size(354, 23);
             txtGameMode.TabIndex = 3;
             // 
             // label3
@@ -217,7 +220,7 @@
             txtTeamName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtTeamName.Location = new Point(6, 37);
             txtTeamName.Name = "txtTeamName";
-            txtTeamName.Size = new Size(386, 23);
+            txtTeamName.Size = new Size(354, 23);
             txtTeamName.TabIndex = 1;
             // 
             // label2
@@ -242,12 +245,14 @@
             // 
             txtNewTeamName.Location = new Point(12, 108);
             txtNewTeamName.Name = "txtNewTeamName";
-            txtNewTeamName.Size = new Size(249, 23);
+            txtNewTeamName.Size = new Size(426, 23);
             txtNewTeamName.TabIndex = 11;
+            txtNewTeamName.TextChanged += txtNewTeamName_TextChanged;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(267, 108);
+            btnAdd.Enabled = false;
+            btnAdd.Location = new Point(444, 108);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(75, 23);
             btnAdd.TabIndex = 12;
@@ -257,7 +262,8 @@
             // 
             // btnImportPaste
             // 
-            btnImportPaste.Location = new Point(354, 12);
+            btnImportPaste.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnImportPaste.Location = new Point(499, 12);
             btnImportPaste.Name = "btnImportPaste";
             btnImportPaste.Size = new Size(164, 23);
             btnImportPaste.TabIndex = 13;
@@ -267,19 +273,32 @@
             // 
             // btnSave
             // 
+            btnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnSave.DialogResult = DialogResult.OK;
-            btnSave.Location = new Point(590, 496);
+            btnSave.Location = new Point(735, 496);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 23);
             btnSave.TabIndex = 14;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
             // 
+            // btnDeleteAll
+            // 
+            btnDeleteAll.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnDeleteAll.Location = new Point(397, 12);
+            btnDeleteAll.Name = "btnDeleteAll";
+            btnDeleteAll.Size = new Size(96, 23);
+            btnDeleteAll.TabIndex = 15;
+            btnDeleteAll.Text = "Clear Teams";
+            btnDeleteAll.UseVisualStyleBackColor = true;
+            btnDeleteAll.Click += btnDeleteAll_Click;
+            // 
             // frmTeamsConfig
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(758, 531);
+            ClientSize = new Size(903, 531);
+            Controls.Add(btnDeleteAll);
             Controls.Add(btnSave);
             Controls.Add(btnImportPaste);
             Controls.Add(btnAdd);
@@ -328,5 +347,6 @@
         private Button btnAdd;
         private Button btnImportPaste;
         private Button btnSave;
+        private Button btnDeleteAll;
     }
 }
