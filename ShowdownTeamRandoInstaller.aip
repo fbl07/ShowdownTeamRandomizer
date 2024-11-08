@@ -57,6 +57,7 @@
     <ROW File="ShowdownTeamRando.deps.json" Component_="ShowdownTeamRando.runtimeconfig.json" FileName="SHOWDO~2.JSO|ShowdownTeamRando.deps.json" Attributes="0" SourcePath="ShowdownTeamRando\bin\Release\net8.0-windows\ShowdownTeamRando.deps.json" SelfReg="false"/>
     <ROW File="API_CALL.json" Component_="ShowdownTeamRando.runtimeconfig.json" FileName="API_CA~1.JSO|API_CALL.json" Attributes="0" SourcePath="ShowdownTeamRando\bin\Release\net8.0-windows\API_CALL.json" SelfReg="false"/>
     <ROW File="ShowdownTeamRando.exe" Component_="ShowdownTeamRando.exe" FileName="SHOWDO~1.EXE|ShowdownTeamRando.exe" Attributes="0" SourcePath="ShowdownTeamRando\bin\Release\net8.0-windows\ShowdownTeamRando.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="ShowdownTeamRando.pdb" Component_="ShowdownTeamRando.exe" FileName="SHOWDO~1.PDB|ShowdownTeamRando.pdb" Attributes="0" SourcePath="ShowdownTeamRando\bin\Debug\net8.0-windows\ShowdownTeamRando.pdb" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
     <ROW BuildKey="AnyCPU_Release" BuildName="AnyCPU_Release" BuildOrder="1" BuildType="0" Languages="en" InstallationType="4" SummInfoMetadata="Page Count:450" UseLargeSchema="true" MsiPackageType="x64"/>
