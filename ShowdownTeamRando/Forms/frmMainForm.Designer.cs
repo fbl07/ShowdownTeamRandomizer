@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainForm));
             btnTeamConfigs = new Button();
             btnSettings = new Button();
             rbGameFormats = new RadioButton();
@@ -49,8 +50,11 @@
             label2 = new Label();
             lblCatInfo = new Label();
             btnRandomize = new Button();
+            statusStrip1 = new StatusStrip();
+            lblVersion = new ToolStripStatusLabel();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // btnTeamConfigs
@@ -109,7 +113,7 @@
             groupBox1.Controls.Add(txtCurrentTeam);
             groupBox1.Location = new Point(12, 154);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(425, 287);
+            groupBox1.Size = new Size(425, 290);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             groupBox1.Text = "Randomization Results";
@@ -191,7 +195,7 @@
             groupBox2.Controls.Add(label2);
             groupBox2.Location = new Point(443, 60);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(401, 381);
+            groupBox2.Size = new Size(401, 384);
             groupBox2.TabIndex = 10;
             groupBox2.TabStop = false;
             groupBox2.Text = "Team Info";
@@ -269,11 +273,29 @@
             btnRandomize.UseVisualStyleBackColor = true;
             btnRandomize.Click += btnRandomize_Click;
             // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { lblVersion });
+            statusStrip1.Location = new Point(0, 460);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(856, 22);
+            statusStrip1.TabIndex = 13;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // lblVersion
+            // 
+            lblVersion.Name = "lblVersion";
+            lblVersion.Size = new Size(810, 17);
+            lblVersion.Spring = true;
+            lblVersion.Text = "Version";
+            lblVersion.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // frmMainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(856, 453);
+            ClientSize = new Size(856, 482);
+            Controls.Add(statusStrip1);
             Controls.Add(btnRandomize);
             Controls.Add(lblCatInfo);
             Controls.Add(groupBox2);
@@ -284,6 +306,7 @@
             Controls.Add(rbFolders);
             Controls.Add(btnSettings);
             Controls.Add(btnTeamConfigs);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmMainForm";
             Text = "Pokemon Showdown Teams Randomizer";
             Load += frmMainForm_Load;
@@ -291,6 +314,8 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -318,5 +343,7 @@
         private Button btnNextTeam;
         private Label label1;
         private TextBox txtCurrentTeam;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel lblVersion;
     }
 }
