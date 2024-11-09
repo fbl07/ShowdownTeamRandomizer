@@ -24,6 +24,7 @@ namespace ShowdownTeamRando
         private void frmTeamsConfig_Load(object sender, EventArgs e)
         {
             rbFolders.Checked = !Configs.UseGameModes;
+            rbGameFormats.Checked = Configs.UseGameModes;
             LoadTeams();
         }
 
