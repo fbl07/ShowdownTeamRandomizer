@@ -1,14 +1,5 @@
 ﻿using ShowdownTeamRando.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.Versioning;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ShowdownTeamRando
 {
@@ -24,6 +15,7 @@ namespace ShowdownTeamRando
         private void frmTeamsConfig_Load(object sender, EventArgs e)
         {
             rbFolders.Checked = !Configs.UseGameModes;
+            rbGameFormats.Checked = Configs.UseGameModes;
             LoadTeams();
         }
 

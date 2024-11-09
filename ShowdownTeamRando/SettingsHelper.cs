@@ -1,12 +1,5 @@
 ﻿using ShowdownTeamRando.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Text.Json.Nodes;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace ShowdownTeamRando
 {
@@ -30,10 +23,35 @@ namespace ShowdownTeamRando
             {
                 string settingsJson = File.ReadAllText(settingsFilename);
                 Configs readSettings = JsonSerializer.Deserialize<Configs>(settingsJson);
+
+                if (readSettings.Version == null)
+                    readSettings.Version = "1.2.0";
+
+                if (readSettings.Version == "1.2.0")
+                {
+                    Migration_1_2_0__1_3_0(readSettings);
+                    SaveSettings(readSettings);
+                }
+
                 return readSettings;
             }
             else
                 return null;
         }
+
+        private static void Migration_1_2_0__1_3_0(Configs configs)
+        {
+            if (!configs.IgnoredGameModes.Contains("gen9nationaldexdoubles-box"))
+                configs.IgnoredGameModes.Add("gen9nationaldexdoubles-box");
+
+            if (!configs.IgnoredGameModes.Contains("gen2stadiumou"))
+                configs.IgnoredGameModes.Add("gen2stadiumou");
+
+            if (!configs.IgnoredGameModes.Contains("gen1ubers"))
+                configs.IgnoredGameModes.Add("gen1ubers");
+
+            configs.Version = "1.3.0";
+        }
+
     }
 }

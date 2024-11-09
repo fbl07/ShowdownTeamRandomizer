@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ShowdownTeamRando.Models
+﻿namespace ShowdownTeamRando.Models
 {
     public class Configs
     {
+        public Configs()
+        {
+            if (Version == null)
+                Version = "1.2.0";
+        }
+
         public string? ShowdownDesktopFileLocation { get; set; }
         public bool ImportFolderOnStartup { get; set; }
-
         public bool UseGameModes { get; set; } = false;
+        public string Version { get; set; }
 
         public List<string> IgnoredGameModes { get; set; } = new List<string>(Constants.DefaultIgnoredGameModes);
         public List<string> IgnoredFolders { get; set; } = new List<string>(Constants.DefaultIgnoredFolders);
